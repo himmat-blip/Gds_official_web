@@ -1,0 +1,15 @@
+header.nw_header {position: fixed;top: 0;left: 0;width: 100%;z-index: 999;transition: 0.3s ease-in-out;}
+.nw_header .navbar-expand-lg {padding: 15px 0;}
+.nw_header a.brand_logo img.mob-view {display: none;margin: initial;}
+.nw_header .navbar-expand-lg .navbar-collapse {justify-content: end;}
+.nw_header .navbar-expand-lg .navbar-collapse a.nav-link {font-size: 18px;font-weight: 600;color: #333;padding: initial;transition: 0.3s ease-in-out;}
+.nw_header .navbar-expand-lg .navbar-collapse .navbar-nav .nav-item+.nav-item {margin-left: 40px;}
+.nw_header .navbar-expand-lg .schedule_call_btn {background: #cfa200;color: #fff;padding: 0px 10px;display: block;text-decoration: none;line-height: 42px;font-size: 18px;font-weight: 500;transition: 0.3s ease-in-out;}
+.nw_header .navbar-expand-lg .navbar-collapse .navbar-nav {align-items: center;}
+.nw_header .navbar-expand-lg .navbar-collapse .navbar-nav .nav-item .schedule_call_btn:hover {background: #333;}
+.nw_header .navbar-expand-lg .navbar-collapse a.nav-link:hover {color: #cfa200;}
+
+.btn {border: none;height: 42px;align-items: center;padding: 0px 20px;border-radius: 50px;font-size: 16px;font-weight: 500;color: #000;display: inline-flex;justify-content: center;background: #fff;}
+.o-slider--item .container {height: 100%;display: flex;align-items: center;}
+.main_slider_content h3 {font-size: 42px;font-weight: 600;color: #fff;}
+.main_slider_content {position: relative;z-index: 9;max-width: 700px;}

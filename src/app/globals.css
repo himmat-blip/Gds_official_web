@@ -1,26 +1,59 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #030712;
+  --foreground: #ffffff;
+  --primary-cyan: #00d2ff;
+  --primary-blue: #3a7bd5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-script: var(--font-caveat), cursive;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Animations for the Orbiting Elements */
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(180px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(180px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  0% {
+    transform: rotate(0deg) translateX(280px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg) translateX(280px) rotate(360deg);
+  }
+}
+
+.orb-center {
+  background: radial-gradient(circle, rgba(58,123,213,0.8) 0%, rgba(3,7,18,0) 70%);
+  box-shadow: 0 0 50px rgba(0, 210, 255, 0.4);
+}
+
+.tech-bubble {
+  background: rgba(10, 15, 30, 0.8);
+  border: 1px solid rgba(0, 210, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 210, 255, 0.1);
+  backdrop-filter: blur(4px);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, #ffffff 0%, #00d2ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
