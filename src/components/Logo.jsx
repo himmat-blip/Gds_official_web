@@ -1,16 +1,12 @@
-import Image from "next/image";
-
-export default function Logo({ className = "h-10" }) {
+export default function Logo({ className = "" }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
-      <Image 
-        src="/images/company_logo.png" 
-        alt="GDSoftwares Logo" 
-        width={200} 
-        height={50} 
-        className="h-full w-auto object-contain"
-        priority
-      />
+    <div className={`flex items-center gap-2.5 ${className}`}>
+      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0099ff] to-[#0070f3] flex items-center justify-center shadow-md shadow-blue-500/20 font-black text-white text-xl">
+        G
+      </div>
+      <span className="text-xl md:text-2xl font-bold tracking-tight text-white">
+        GD<span className="text-[#00d2ff]">Softwares</span>
+      </span>
     </div>
   );
 }
