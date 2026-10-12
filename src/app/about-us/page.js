@@ -92,7 +92,7 @@ export default function AboutUsPage() {
             <div>
               <Link
                 href="/contact-us"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-[0_0_30px_rgba(0,180,216,0.5)] transition-all text-base active:scale-95 group"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-[0_0_30px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95 group"
               >
                 <span>Meet your technology partner</span>
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -152,7 +152,7 @@ export default function AboutUsPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
                 href="/quote"
-                className="w-full sm:w-auto bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.45)] transition-all text-base active:scale-95"
+                className="w-full sm:w-auto bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95"
               >
                 Get a Free Quote
               </Link>

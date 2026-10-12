@@ -169,7 +169,7 @@ export default function CareerPage() {
                 <div className="flex-shrink-0">
                   <Link
                     href={`/contact-us?role=${encodeURIComponent(role.title)}`}
-                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-[#00d2ff] bg-[#070b14] border border-cyan-500/30 hover:bg-gradient-to-r hover:from-[#00b4d8] hover:to-[#6366f1] hover:text-white hover:border-transparent transition-all shadow-sm active:scale-95"
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#00b4d8] to-[#0096c7] hover:shadow-[0_0_20px_rgba(0,180,216,0.55)] shadow-[0_0_15px_rgba(0,180,216,0.3)] transition-all active:scale-95"
                   >
                     Apply now
                   </Link>
@@ -192,7 +192,7 @@ export default function CareerPage() {
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 text-[#00d2ff] hover:text-cyan-300 font-semibold text-lg transition-colors group"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95 group"
             >
               <span>Start a conversation</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>

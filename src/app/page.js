@@ -81,7 +81,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4 mb-16">
                 <Link 
                   href="/contact-us" 
-                  className="inline-flex justify-center items-center bg-[#5ed8e7] text-[#060814] font-semibold py-3.5 px-8 rounded-xl hover:bg-cyan-400 transition-colors"
+                  className="inline-flex justify-center items-center bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white font-semibold py-3.5 px-8 rounded-xl shadow-[0_0_20px_rgba(0,180,216,0.35)] hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] transition-all active:scale-95"
                 >
                   Start a Project
                 </Link>
@@ -348,7 +348,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <Link 
               href="/quote" 
-              className="inline-flex justify-center items-center bg-gradient-to-r from-[#5ed8e7] to-[#9d4edd] text-white font-semibold py-4 px-10 rounded-xl hover:opacity-90 transition-opacity shadow-[0_0_20px_rgba(94,216,231,0.3)] text-lg"
+              className="inline-flex justify-center items-center bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white font-semibold py-4 px-10 rounded-xl shadow-[0_0_20px_rgba(0,180,216,0.35)] hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] transition-all text-lg active:scale-95"
             >
               Get a Free Quote
             </Link>

@@ -83,7 +83,7 @@ export default function ContactUs() {
               </div>
               
               <div className="pt-4">
-                <button type="submit" className="w-full bg-gradient-to-r from-[#2ab5e1] via-[#5c4ae1] to-[#8c1fe1] text-white font-bold text-lg py-5 px-8 rounded-xl transition-all shadow-lg hover:shadow-purple-500/20 hover:scale-[1.01] flex items-center justify-center gap-2">
+                <button type="submit" className="w-full bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white font-semibold text-lg py-4 px-8 rounded-xl transition-all shadow-[0_0_20px_rgba(0,180,216,0.35)] hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] active:scale-95 flex items-center justify-center gap-2">
                   Send Message <span>&rarr;</span>
                 </button>
               </div>

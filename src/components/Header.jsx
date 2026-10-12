@@ -54,7 +54,7 @@ export default function Header() {
         <div className="hidden lg:block">
           <Link 
             href="/contact-us" 
-            className="inline-block bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white px-6 py-2.5 rounded-xl font-semibold hover:opacity-95 transition-all shadow-[0_0_20px_rgba(0,180,216,0.35)] text-sm tracking-wide active:scale-95"
+            className="inline-block bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-6 py-2.5 rounded-xl font-semibold hover:shadow-[0_0_20px_rgba(0,180,216,0.5)] transition-all shadow-[0_0_15px_rgba(0,180,216,0.3)] text-sm tracking-wide active:scale-95"
           >
             Schedule a Call
           </Link>
@@ -98,7 +98,7 @@ export default function Header() {
             <Link
               href="/contact-us"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white py-2.5 rounded-xl font-semibold text-sm shadow-[0_0_15px_rgba(0,180,216,0.3)]"
+              className="block text-center bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white py-2.5 rounded-xl font-semibold text-sm shadow-[0_0_15px_rgba(0,180,216,0.3)] hover:shadow-[0_0_20px_rgba(0,180,216,0.5)] transition-all"
             >
               Schedule a Call
             </Link>

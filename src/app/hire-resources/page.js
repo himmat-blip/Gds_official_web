@@ -249,7 +249,7 @@ export default function HireResourcesPage() {
             <div className="flex flex-wrap items-center gap-4">
               <Link
                 href="/quote"
-                className="bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white px-7 py-3 rounded-xl font-semibold hover:shadow-[0_0_20px_rgba(0,180,216,0.4)] transition-all text-sm tracking-wide active:scale-95"
+                className="bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-7 py-3 rounded-xl font-semibold hover:shadow-[0_0_20px_rgba(0,180,216,0.55)] shadow-[0_0_15px_rgba(0,180,216,0.35)] transition-all text-sm tracking-wide active:scale-95"
               >
                 Get a Free Quote
               </Link>
@@ -383,7 +383,7 @@ export default function HireResourcesPage() {
             </p>
             <Link
               href="/quote"
-              className="inline-block bg-gradient-to-r from-[#00b4d8] to-[#6366f1] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.45)] transition-all text-base active:scale-95"
+              className="inline-block bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95"
             >
               Get a Free Quote
             </Link>
