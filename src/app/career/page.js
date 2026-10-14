@@ -59,16 +59,11 @@ export default function CareerPage() {
   ];
 
   return (
-    <div className="bg-[#fafafa] text-slate-900 min-h-screen pt-16 pb-24 selection:bg-amber-100 selection:text-amber-900">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen pt-8 md:pt-10 pb-20 selection:bg-amber-100 selection:text-amber-900">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         
         {/* 1. Hero Section */}
-        <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-semibold text-[#d97706] uppercase tracking-wider mb-8 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
-            CAREERS AT GDSOFTWARES
-          </div>
-
+        <div className="mb-12">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.15] text-slate-900">
             <span className="font-serif">Do the work you&apos;re </span>
             <span className="font-serif italic text-[#d97706]">proud of.</span>

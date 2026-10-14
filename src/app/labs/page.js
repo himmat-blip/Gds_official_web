@@ -132,15 +132,10 @@ export default function LabsPage() {
       : labProjects.filter((p) => p.category.toLowerCase() === activeCategory.toLowerCase());
 
   return (
-    <div className="bg-[#fafafa] text-slate-900 min-h-screen pt-16 pb-24 selection:bg-amber-100 selection:text-amber-900">
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen pt-8 md:pt-10 pb-20 selection:bg-amber-100 selection:text-amber-900">
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         {/* 1. Hero Section */}
-        <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-semibold text-[#d97706] uppercase tracking-wider mb-8 shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
-            GD INNOVATION LABS
-          </div>
-
+        <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.15] text-slate-900">
             <span className="font-serif">Next-gen intelligence.</span>
             <br />

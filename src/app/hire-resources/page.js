@@ -218,17 +218,11 @@ export default function HireResourcesPage() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-100 selection:text-amber-900">
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-14 md:pt-16 pb-16 sm:pb-20 md:pb-24 overflow-x-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-10 pb-16 sm:pb-20 md:pb-24 overflow-x-hidden">
         {/* Section 1: Hero Split Section */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-14 items-center mb-16 sm:mb-20 md:mb-28">
           {/* Left Column: Headline and Call to Actions */}
           <div className="lg:col-span-7">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-4 sm:mb-6 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#d97706]" />
-              DEDICATED DEVELOPERS
-            </div>
-
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
               <span className="font-serif">Hire Dedicated </span>
               <br className="hidden sm:block" />

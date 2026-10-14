@@ -265,7 +265,7 @@ export default function Home() {
     <main className="min-h-screen font-sans bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900 relative">
       
       {/* 1. Hero Section matching user mockup */}
-      <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
+      <section className="relative pt-6 pb-12 md:pt-8 md:pb-16 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
         
         {/* Subtle Warm Amber ambient background */}
         <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/35 blur-[130px] rounded-full pointer-events-none" />
@@ -277,12 +277,6 @@ export default function Home() {
             {/* Left Column Content */}
             <div className="lg:col-span-6 z-10">
               
-              {/* USA-Based Badge */}
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-amber-200 bg-amber-50/80 text-[11px] font-bold uppercase tracking-wider text-[#d97706] mb-6 shadow-xs">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#d97706]" />
-                USA-BASED SOFTWARE COMPANY
-              </div>
-
               {/* Headline */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.12]">
                 <span className="font-serif block">Level Up Your</span>

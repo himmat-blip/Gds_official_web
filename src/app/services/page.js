@@ -229,17 +229,9 @@ export default function ServicesPage() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-100 selection:text-amber-900">
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-24">
-        {/* Eyebrow badge */}
-        <div className="flex items-center mb-6">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#d97706]" />
-            CONSULTING & SERVICES
-          </div>
-        </div>
-
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-8 md:pt-10 pb-20">
         {/* Hero Title & Subtitle */}
-        <div className="max-w-3xl mb-12">
+        <div className="max-w-3xl mb-10">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6">
             <span className="font-serif">Our </span>
             <span className="font-serif italic text-[#d97706]">Services</span>

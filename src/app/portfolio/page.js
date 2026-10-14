@@ -121,14 +121,9 @@ export default function PortfolioPage() {
     <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-100 selection:text-amber-900">
       
       {/* 1. Hero Section matching old.gdsoftwares.com/portfolio.php text */}
-      <section className="relative pt-20 pb-20 md:pt-28 md:pb-28 bg-gradient-to-b from-[#faf8f5] via-white to-[#fafafa] border-b border-slate-100">
+      <section className="relative pt-10 pb-12 md:pt-14 md:pb-16 bg-gradient-to-b from-[#faf8f5] via-white to-[#fafafa] border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-6 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#d97706]" />
-            OUR WORK &bull; CLIENT PORTFOLIO
-          </div>
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
             <span className="font-serif block">Our</span>
             <span className="font-serif italic text-[#d97706] font-normal">Portfolio</span>

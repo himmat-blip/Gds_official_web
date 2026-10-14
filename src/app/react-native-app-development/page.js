@@ -72,18 +72,13 @@ export default function ReactNativeDevelopmentPage() {
     <main className="min-h-screen bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900">
       
       {/* 1. Hero Section */}
-      <section className="relative pt-24 pb-20 md:pt-32 md:pb-28 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
+      <section className="relative pt-10 pb-16 md:pt-14 md:pb-20 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/35 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-8 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#d97706]" />
-                SERVICES &bull; CROSS-PLATFORM MOBILE
-              </div>
-
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.12]">
                 <span className="font-serif block">React Native App</span>
                 <span className="font-serif italic text-[#d97706] font-normal">Development Company</span>

@@ -5,16 +5,11 @@ export const metadata = {
 
 export default function Quote() {
   return (
-    <main className="min-h-screen bg-[#fafafa] text-slate-900 pt-16 pb-24 font-sans selection:bg-amber-100 selection:text-amber-900">
+    <main className="min-h-screen bg-[#fafafa] text-slate-900 pt-8 md:pt-10 pb-20 font-sans selection:bg-amber-100 selection:text-amber-900">
       <div className="container mx-auto px-6 max-w-7xl">
         
         {/* Top Header Section */}
-        <div className="mb-16">
-          <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-            <div className="w-2 h-2 rounded-full bg-[#d97706]" />
-            <span className="text-[#d97706] text-xs font-bold tracking-wider uppercase">Free Consultation</span>
-          </div>
-          
+        <div className="mb-10">
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold mb-6 text-slate-900">
             Get a <span className="italic text-[#d97706] font-normal font-serif">Free Quote</span>
           </h1>
