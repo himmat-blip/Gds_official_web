@@ -228,30 +228,23 @@ export default function ServicesPage() {
       : services.filter((s) => s.category === activeCategory);
 
   return (
-    <div className="min-h-screen bg-[#060b13] text-white selection:bg-[#00d2ff] selection:text-black">
-      {/* Background radial effects */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px]" />
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-indigo-500/10 rounded-full blur-[128px]" />
-      </div>
-
+    <div className="min-h-screen bg-[#fafafa] text-slate-900 selection:bg-amber-100 selection:text-amber-900">
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-24">
         {/* Eyebrow badge */}
         <div className="flex items-center mb-6">
-          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-[#0c1626]/80 backdrop-blur-md text-xs font-semibold uppercase tracking-wider text-[#00d2ff] shadow-[0_0_15px_rgba(0,210,255,0.15)]">
-            <span className="w-2 h-2 rounded-full bg-[#00d2ff] animate-pulse" />
+          <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#d97706]" />
             CONSULTING & SERVICES
           </div>
         </div>
 
         {/* Hero Title & Subtitle */}
         <div className="max-w-3xl mb-12">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-6">
             <span className="font-serif">Our </span>
-            <span className="font-serif italic text-[#00d2ff]">Services</span>
+            <span className="font-serif italic text-[#d97706]">Services</span>
           </h1>
-          <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
+          <p className="text-slate-600 text-lg md:text-xl leading-relaxed">
             From mobile apps to AI solutions — we build technology that drives real business results. Explore our full range of development and consulting services.
           </p>
         </div>
@@ -266,8 +259,8 @@ export default function ServicesPage() {
                 onClick={() => setActiveCategory(category)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer ${
                   isActive
-                    ? "bg-gradient-to-r from-[#00b4d8] to-[#0077b6] text-white shadow-[0_0_20px_rgba(0,180,216,0.35)] scale-105"
-                    : "bg-[#0c1424] text-slate-300 hover:text-white border border-slate-800/80 hover:border-slate-700 hover:bg-[#101b30]"
+                    ? "bg-[#d97706] text-white shadow-md scale-105"
+                    : "bg-white text-slate-700 hover:text-[#d97706] border border-slate-200 hover:border-amber-300 hover:bg-amber-50/30"
                 }`}
               >
                 {category}
@@ -281,25 +274,25 @@ export default function ServicesPage() {
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="group bg-[#0c1220] border border-slate-800/90 rounded-2xl overflow-hidden hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(0,210,255,0.12)] transition-all duration-300 flex flex-col hover:-translate-y-1.5"
+              className="group bg-white border border-slate-100 rounded-2xl overflow-hidden hover:border-amber-300 hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1"
             >
               {/* Card Image Banner */}
-              <div className="h-48 relative w-full overflow-hidden bg-slate-900">
+              <div className="h-48 relative w-full overflow-hidden bg-slate-100">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500 brightness-90 group-hover:brightness-100"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1220] via-transparent to-black/30" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
                 {/* Overlaid badges at bottom-left */}
                 <div className="absolute bottom-3 left-4 flex items-center gap-2 z-10">
-                  <div className="w-8 h-8 rounded-lg bg-[#070b14]/85 backdrop-blur-md border border-cyan-500/30 flex items-center justify-center text-[#00d2ff] shadow-sm">
+                  <div className="w-8 h-8 rounded-lg bg-white/90 backdrop-blur-md border border-amber-300/50 flex items-center justify-center text-[#d97706] shadow-sm">
                     {service.icon}
                   </div>
-                  <span className="px-3 py-1 rounded-full bg-[#070b14]/85 backdrop-blur-md border border-cyan-500/30 text-xs font-semibold text-[#00d2ff]">
+                  <span className="px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-amber-300/50 text-xs font-semibold text-[#d97706]">
                     {service.category}
                   </span>
                 </div>
@@ -307,29 +300,29 @@ export default function ServicesPage() {
 
               {/* Card Content Body */}
               <div className="p-6 md:p-7 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#00d2ff] transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#d97706] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed mb-6">
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
                   {service.description}
                 </p>
 
                 {/* Bullet Points */}
                 <ul className="space-y-2.5 mb-8 flex-grow">
                   {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-start gap-2.5 text-slate-300 text-sm leading-snug">
-                      <span className="text-[#00d2ff] text-xs mt-0.5 select-none">✦</span>
+                    <li key={idx} className="flex items-start gap-2.5 text-slate-700 text-sm leading-snug">
+                      <span className="text-[#d97706] text-xs mt-0.5 select-none">✦</span>
                       <span>{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* Tech Stack Pills */}
-                <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-800/80 mt-auto">
+                <div className="flex flex-wrap gap-2 pt-4 border-t border-slate-100 mt-auto">
                   {service.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-[#070b14] border border-slate-800/80 text-cyan-400"
+                      className="px-3 py-1 rounded-full text-xs font-medium bg-amber-50/70 border border-amber-200/60 text-amber-900"
                     >
                       {tag}
                     </span>
@@ -341,20 +334,18 @@ export default function ServicesPage() {
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-28 relative rounded-3xl bg-gradient-to-b from-[#0c1424] to-[#070b14] border border-slate-800/90 py-16 px-6 md:px-12 text-center overflow-hidden shadow-2xl">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
-
+        <div className="mt-28 relative rounded-3xl bg-white border border-amber-200/70 py-16 px-6 md:px-12 text-center overflow-hidden shadow-lg">
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
               <span className="font-serif">Need a Custom </span>
-              <span className="font-serif italic text-[#00d2ff]">Solution?</span>
+              <span className="font-serif italic text-[#d97706]">Solution?</span>
             </h2>
-            <p className="text-slate-400 text-base md:text-lg mb-8 leading-relaxed">
-              Let's discuss your requirements and build the right technology roadmap for your business.
+            <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed">
+              Let&apos;s discuss your requirements and build the right technology roadmap for your business.
             </p>
             <Link
               href="/quote"
-              className="inline-block bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95"
+              className="inline-block bg-[#d97706] hover:bg-[#b45309] text-white px-8 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-xl transition-all text-base active:scale-95"
             >
               Get a Free Quote
             </Link>

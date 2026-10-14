@@ -3,15 +3,15 @@ import Image from "next/image";
 export default function Logo({ className = "", variant = "theme" }) {
   const getLogoSrc = () => {
     switch (variant) {
-      case "cyan-text":
-        return "/images/logo-theme-opt2.png";
       case "white":
         return "/images/gd-logo-white.png";
+      case "cyan":
+        return "/images/gd-logo-theme.png";
       case "original":
-        return "/images/gd-logo.png";
+      case "gold":
       case "theme":
       default:
-        return "/images/gd-logo-theme.png";
+        return "/images/gd-logo.png";
     }
   };
 

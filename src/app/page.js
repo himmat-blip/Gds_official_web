@@ -1,328 +1,683 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
-  const services = [
+  const handleScheduleCall = (e) => {
+    if (e) e.preventDefault();
+    if (typeof window !== "undefined" && window.Calendly) {
+      window.Calendly.initPopupWidget({ url: "https://calendly.com/dev-145" });
+    } else {
+      window.location.href = "/contact-us";
+    }
+  };
+
+  const stats = [
+    { number: "8+", label: "Years in Industry" },
+    { number: "388+", label: "Projects Delivered" },
+    { number: "155+", label: "Happy Clients" },
+    { number: "20+", label: "Team Members" },
+  ];
+
+  const coreServices = [
+    {
+      title: "QA (Manual & Automation)",
+      description: "Quality assurance, manual testing, Selenium automation and regression test suites.",
+      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80",
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" strokeWidth="2" />
+          <circle cx="12" cy="12" r="4" strokeWidth="2" fill="currentColor" fillOpacity="0.2" />
+        </svg>
+      )
+    },
+    {
+      title: "Desktop Application",
+      description: "Client/server architecture and high-performance Windows business applications.",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6a2 2 0 01-2-2V6z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20h6" />
+        </svg>
+      )
+    },
+    {
+      title: "Training",
+      description: "Hands-on technology training and corporate upskilling by experienced specialists.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80",
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2l2.4 7.4H22l-6 4.4 2.3 7.2L12 16.6l-6.3 4.4 2.3-7.2-6-4.4h7.6z" />
+        </svg>
+      )
+    },
     {
       title: "Mobile App Development",
-      description: "Native iOS & Android apps and cross-platform solutions built for scale and quality.",
+      description: "Native iOS & Android apps and cross-platform Flutter/React Native solutions built for scale.",
       image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-      )
-    },
-    {
-      title: "Blockchain Development",
-      description: "Smart contracts, DeFi platforms, and Web3 integrations built for security.",
-      image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-      )
-    },
-    {
-      title: "Custom Software",
-      description: "End-to-end enterprise software tailored to your exact workflow and stack.",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path></svg>
-      )
-    },
-    {
-      title: "QA & Automation",
-      description: "Manual testing, Selenium automation, and CI/CD pipeline integration.",
-      image: "https://images.unsplash.com/photo-1516322073796-0153366479eb?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
       )
     },
     {
       title: "Web Development",
-      description: "High-performance web apps using React, Angular, and Next.js.",
+      description: "High-performance websites and SaaS platforms built with modern cloud and component frameworks.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+        </svg>
+      )
+    },
+    {
+      title: "Blockchain Development",
+      description: "Decentralized architecture, smart contracts, custom tokens, and secure Web3 ecosystems.",
+      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+        </svg>
       )
     },
     {
       title: "AI & Machine Learning",
-      description: "Ultra-intelligent solutions with accurate and reliable ML-driven outcomes.",
+      description: "Intelligent software solutions with predictive modeling, LLMs, and workflow automation.",
       image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-      icon: (
-        <svg className="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      )
+    },
+    {
+      title: "ServiceNow & Enterprise",
+      description: "Digital transformation, custom enterprise applications, and IT service automation.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80",
+      badgeIcon: (
+        <svg className="w-5 h-5 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
       )
     }
   ];
 
+  const industries = [
+    {
+      name: "Healthcare",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" />
+        </svg>
+      )
+    },
+    {
+      name: "Fintech",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="currentColor" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="4" />
+        </svg>
+      )
+    },
+    {
+      name: "EdTech",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+      )
+    },
+    {
+      name: "Marketplace",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="9" strokeWidth="2" />
+          <circle cx="12" cy="12" r="4" strokeWidth="2" fill="currentColor" />
+        </svg>
+      )
+    },
+    {
+      name: "Transport",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="currentColor" viewBox="0 0 24 24">
+          <polygon points="12,2 22,9 18,22 6,22 2,9" />
+        </svg>
+      )
+    },
+    {
+      name: "Gaming",
+      icon: (
+        <svg className="w-7 h-7 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <polygon points="12,2 21,7 21,17 12,22 3,17 3,7" strokeWidth="2" />
+        </svg>
+      )
+    }
+  ];
+
+  const philosophies = [
+    {
+      title: "We're Creative",
+      desc: "If you're already a front-end developer, well, pretend you're also wearing a pirate hat.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+        </svg>
+      )
+    },
+    {
+      title: "We're Passionate",
+      desc: "What's important is having passion for accomplishing. Being passionate about productivity.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343a8 8 0 010 11.314z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      )
+    },
+    {
+      title: "We're Professional",
+      desc: "You want to communicate both your brand's purpose and your value, focuses on the user's needs.",
+      icon: (
+        <svg className="w-8 h-8 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      )
+    }
+  ];
+
+  const testimonials = [
+    {
+      name: "Luis",
+      quote: "Very efficient, flexible and hard working company, we are always happy to send them new projects.",
+      role: "Verified Client",
+      initial: "L",
+      stars: 5
+    },
+    {
+      name: "Maxim",
+      quote: "Responsibly approaches to performance of tasks in view, as well and all his team. He always do all the work clearly and quickly. Excellent specialist in the field of blockchain.",
+      role: "Blockchain Partner",
+      initial: "M",
+      stars: 5
+    }
+  ];
+
+  const workflowSteps = [
+    {
+      num: "01",
+      title: "Analysis",
+      desc: "Requirement Gathering & System Study"
+    },
+    {
+      num: "02",
+      title: "Design",
+      desc: "Design Wire-frame & Layout Design"
+    },
+    {
+      num: "03",
+      title: "Development",
+      desc: "Product development & Testing"
+    },
+    {
+      num: "04",
+      title: "Support",
+      desc: "Implementation & Support"
+    }
+  ];
+
   return (
-    <main className="min-h-screen font-sans bg-[#030712]">
+    <main className="min-h-screen font-sans bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900 relative">
       
       {/* 1. Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center text-white overflow-hidden pt-16">
-        <div className="container mx-auto px-6 relative z-20">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            
-            {/* Left Content */}
-            <div className="w-full lg:w-1/2 max-w-2xl">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 mb-8">
-                <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
-                <span className="text-cyan-400 text-xs font-semibold tracking-wider">USA-BASED SOFTWARE COMPANY</span>
-              </div>
-              
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-white font-serif">
-                Level Up Your <br/>
-                <span className="font-script text-gray-200 font-normal">Business</span> <br/>
-                with Software
-              </h1>
-              
-              <p className="text-gray-400 text-lg md:text-xl mb-10 max-w-lg leading-relaxed">
-                Custom software, mobile apps, and blockchain solutions engineered for growth. 8+ years delivering excellence across healthcare, fintech, and beyond.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-16">
-                <Link 
-                  href="/contact-us" 
-                  className="inline-flex justify-center items-center bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white font-semibold py-3.5 px-8 rounded-xl shadow-[0_0_20px_rgba(0,180,216,0.35)] hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] transition-all active:scale-95"
-                >
-                  Start a Project
-                </Link>
-                <Link 
-                  href="/services" 
-                  className="inline-flex justify-center items-center border border-gray-600 text-white font-semibold py-3.5 px-8 rounded-xl hover:border-white transition-colors"
-                >
-                  View Services &darr;
-                </Link>
-              </div>
+      <section className="relative pt-20 pb-28 md:pt-28 md:pb-36 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
+        
+        {/* Subtle Warm Amber ambient background */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/40 blur-[130px] rounded-full pointer-events-none" />
 
-              {/* Stats moved into Hero */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
-                <div>
-                  <h2 className="text-3xl font-bold text-[#5ed8e7] mb-1 font-serif">8+</h2>
-                  <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">YEARS IN INDUSTRY</p>
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-[#5ed8e7] mb-1 font-serif">200+</h2>
-                  <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">PROJECTS DELIVERED</p>
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-[#5ed8e7] mb-1 font-serif">50+</h2>
-                  <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">GLOBAL CLIENTS</p>
-                </div>
-                <div>
-                  <h2 className="text-3xl font-bold text-[#5ed8e7] mb-1 font-serif">99%</h2>
-                  <p className="text-gray-500 text-[10px] font-bold tracking-widest uppercase">CLIENT RETENTION</p>
-                </div>
-              </div>
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+            
+            {/* Top Pill Badge */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-8 shadow-sm">
+              <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+              8+ YEARS OF PROVEN EXCELLENCE IN USA
             </div>
 
-            {/* Right Content - Overlapping Images Composition */}
-            <div className="w-full lg:w-1/2 relative h-[500px] flex items-center justify-center mt-12 lg:mt-0">
-              
-              {/* Top Right Large Image */}
-              <div className="absolute top-0 right-0 w-[80%] h-[320px] rounded-2xl overflow-hidden border border-[#1e2954] shadow-2xl z-10 bg-[#111936]">
-                <div className="absolute inset-0 opacity-70 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
-                
-                {/* Floating Tags on Large Image */}
-                <div className="absolute top-6 left-6 tech-bubble text-white text-xs font-semibold px-4 py-1.5 rounded-md border border-cyan-500/30">React</div>
-                <div className="absolute top-6 right-6 tech-bubble text-white text-xs font-semibold px-4 py-1.5 rounded-md border border-cyan-500/30">Flutter</div>
-              </div>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.12]">
+              <span className="font-serif block sm:inline">Level Up Your </span>
+              <span className="font-serif italic text-[#d97706] font-normal">Business</span>
+              <br className="hidden sm:inline" />
+              <span className="font-serif"> with Software Development</span>
+            </h1>
 
-              {/* Bottom Left Smaller Image */}
-              <div className="absolute bottom-8 left-8 w-[50%] h-[240px] rounded-2xl overflow-hidden border border-[#1e2954] shadow-[0_20px_50px_rgba(0,0,0,0.5)] z-20 bg-[#111936]">
-                <div className="absolute inset-0 opacity-80 bg-[url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center"></div>
-              </div>
-
-              {/* Bottom Right Small Badge Image/Tag */}
-              <div className="absolute bottom-16 right-12 tech-bubble text-white text-xs font-semibold px-4 py-1.5 rounded-md border border-cyan-500/30 z-20">Web3</div>
-
-              {/* GD Circular Badge */}
-              <div className="absolute top-[220px] left-0 w-28 h-28 rounded-full bg-gradient-to-br from-[#060814] to-[#111936] border border-cyan-500/50 shadow-[0_0_30px_rgba(0,210,255,0.2)] flex items-center justify-center z-30">
-                <div className="absolute inset-2 rounded-full border border-[#1e2954]"></div>
-                <span className="text-3xl font-bold text-white tracking-wider font-serif">GD</span>
-              </div>
-              
-              {/* Decorative Subtle Circles behind everything */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border border-cyan-900/10 rounded-full z-0 pointer-events-none"></div>
+            {/* Subtitle */}
+            <p className="text-slate-600 text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl font-light leading-relaxed">
+              We engineer custom software applications, scalable mobile apps, robust web platforms, and automated QA systems to solve complex business challenges.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <button 
+                onClick={handleScheduleCall}
+                className="inline-flex justify-center items-center bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3.5 px-8 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.28)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.38)] transition-all active:scale-95 text-base cursor-pointer"
+              >
+                Schedule a Call
+              </button>
+              <Link 
+                href="/contact-us" 
+                className="inline-flex justify-center items-center border border-slate-300 hover:border-slate-800 text-slate-800 bg-white/90 hover:bg-white font-semibold py-3.5 px-8 rounded-xl transition-all text-base shadow-sm"
+              >
+                Get a Solution
+              </Link>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* 2. Who We Are Section */}
-      <section className="py-24 bg-[#060814] text-white">
+      {/* 2. Who We Are & Why Choose GDSoftwares Section */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-100">
         <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             
-            {/* Left Image Placeholder */}
-            <div className="w-full lg:w-1/2 relative">
-              <div className="w-full aspect-[4/3] bg-[#111936] rounded-2xl overflow-hidden border border-[#1e2954] relative">
-                {/* Simulated Image Content */}
-                <div className="absolute inset-0 opacity-80 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060814]/60 to-transparent"></div>
+            {/* Left Image: Modern Loft Office */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-lg border border-slate-200/80 bg-slate-100 relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+                  alt="GD Softwares Modern Office"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
-              
-              {/* Overlapping Badge */}
-              <div className="absolute -bottom-8 right-8 bg-[#0b1129] border border-[#1e2954] p-6 rounded-2xl shadow-2xl flex flex-col items-center justify-center min-w-[160px]">
-                <span className="text-4xl font-bold text-[#5ed8e7] font-serif mb-1">200+</span>
-                <span className="text-xs text-gray-400 tracking-wider">Projects Delivered</span>
+
+              {/* Floating Highlight Card */}
+              <div className="hidden sm:block absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 max-w-xs">
+                <div className="text-3xl font-serif font-bold text-[#d97706] mb-1">USA Outsourcing</div>
+                <div className="text-slate-600 text-xs leading-relaxed">
+                  Trusted custom software development partner for global enterprises and startups.
+                </div>
               </div>
             </div>
 
             {/* Right Content */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-[#5ed8e7] text-sm font-bold tracking-widest uppercase mb-4">WHO WE ARE</h2>
-              <h3 className="text-4xl md:text-5xl font-bold mb-6 font-serif">
-                8 Years of Building <span className="font-script text-cyan-400 font-normal">Digital Excellence</span>
-              </h3>
-              <p className="text-gray-400 text-lg mb-10 leading-relaxed">
-                GD Softwares is a USA-based outsource software development company with a team of highly qualified professionals. We cover the full spectrum — from corporate systems and databases to blockchain, mobile apps, and AI-powered solutions.<br/><br/>
-                We don't just deliver code. We build partnerships, delivering transparent timelines, honest pricing, and results that scale.
-              </p>
+            <div className="lg:pl-6">
+              <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+                WELCOME TO GDSOFTWARES
+              </span>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 font-serif text-slate-900 leading-tight">
+                Who <span className="italic text-[#d97706] font-normal font-serif">We Are</span>
+              </h2>
 
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-[#0a0c1a] border border-[#1e2954] p-6 rounded-xl hover:border-cyan-500/30 transition-colors">
-                  <h4 className="text-3xl font-bold text-[#5ed8e7] font-serif mb-2">8+</h4>
-                  <p className="text-xs text-gray-400">Years in Industry</p>
-                </div>
-                <div className="bg-[#0a0c1a] border border-[#1e2954] p-6 rounded-xl hover:border-cyan-500/30 transition-colors">
-                  <h4 className="text-3xl font-bold text-[#5ed8e7] font-serif mb-2">200+</h4>
-                  <p className="text-xs text-gray-400">Projects Delivered</p>
-                </div>
-                <div className="bg-[#0a0c1a] border border-[#1e2954] p-6 rounded-xl hover:border-cyan-500/30 transition-colors">
-                  <h4 className="text-3xl font-bold text-[#5ed8e7] font-serif mb-2">50+</h4>
-                  <p className="text-xs text-gray-400">Global Clients</p>
-                </div>
-                <div className="bg-[#0a0c1a] border border-[#1e2954] p-6 rounded-xl hover:border-cyan-500/30 transition-colors">
-                  <h4 className="text-3xl font-bold text-[#5ed8e7] font-serif mb-2">99%</h4>
-                  <p className="text-xs text-gray-400">Client Retention</p>
+              <div className="space-y-4 text-slate-600 text-base md:text-lg leading-relaxed">
+                <p>
+                  We are an outsource software development company in USA. GD Softwares has the expertise in developing custom software applications to meet customers&apos; needs.
+                </p>
+                <p>
+                  Our web, app &amp; software development services include customized, responsive websites that are optimized for search engines and user experience. We create native and hybrid mobile apps for iOS and Android devices that are user-friendly, secure, and efficient. We also offer e-commerce website development and website maintenance services.
+                </p>
+                <p className="text-slate-500 text-sm md:text-base">
+                  <strong>Vision:</strong> Our software development tools and products implement Object-Oriented design &amp; programming. Further, we use the most modern development tools and technologies available on the market today, staying on pace with fast-evolving digital solutions.
+                </p>
+              </div>
+
+              {/* Core Offerings List from Old Site */}
+              <div className="mt-8 pt-6 border-t border-slate-200/80">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4">
+                  Core Specializations:
+                </h3>
+                <div className="grid grid-cols-2 gap-3 text-sm text-slate-700">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    Software Development
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    Blockchain Development
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    Mobile App Development
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    QA (Manual & Automation)
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    Desktop Applications
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-[#d97706]" />
+                    Training & Consulting
+                  </div>
                 </div>
               </div>
+
             </div>
-            
+
           </div>
         </div>
       </section>
 
-      {/* 3. Our Services Section */}
-      <section className="py-24 bg-[#030712] text-white relative">
-        <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      {/* 3. Why Choose GDSoftwares Deep Content Section */}
+      <section className="py-20 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
             <div>
-              <h2 className="text-[#5ed8e7] text-sm font-bold tracking-widest uppercase mb-3">WHAT WE BUILD</h2>
-              <h3 className="text-4xl md:text-5xl font-bold font-serif">Our Core <span className="font-script text-cyan-400 font-normal">Services</span></h3>
+              <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+                WHY YOU CHOOSE GDSOFTWARES?
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold font-serif text-slate-900 mb-6">
+                One of the Best Software <span className="italic text-[#d97706] font-normal font-serif">Development Companies</span>
+              </h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed text-base">
+                <p>
+                  We are a Software development company having a team of highly qualified professionals. We have been in the industry for the last 8 years and have delivered many projects successfully and still continuing.
+                </p>
+                <p>
+                  Our Internet and Custom Application Development extends to Internet Business/Corporate System Development, Database Application Development, Client/Server Application Development, Windows Application Development, Android Application Development, iPhone Application Development, Quality Assurance and Testing etc.
+                </p>
+                <p>
+                  We prioritize communication with our clients, ensuring that we understand their unique requirements and preferences throughout the development process. We place a strong emphasis on project management, ensuring that our projects are completed on time and within budget.
+                </p>
+              </div>
+            </div>
+
+            {/* Feature Highlights Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 shadow-sm">
+                <h4 className="font-bold text-slate-900 text-lg mb-2 font-serif">8+ Years Experience</h4>
+                <p className="text-sm text-slate-600">Delivering reliable, scalable digital solutions for clients globally since inception.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 shadow-sm">
+                <h4 className="font-bold text-slate-900 text-lg mb-2 font-serif">Client Priority</h4>
+                <p className="text-sm text-slate-600">Transparent communication, dedicated project managers, and regular milestones.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 shadow-sm">
+                <h4 className="font-bold text-slate-900 text-lg mb-2 font-serif">Modern Stacks</h4>
+                <p className="text-sm text-slate-600">From AI, Cloud, and Blockchain to React, Flutter, Python, and ServiceNow.</p>
+              </div>
+              <div className="p-6 rounded-2xl bg-amber-50/50 border border-amber-200/60 shadow-sm">
+                <h4 className="font-bold text-slate-900 text-lg mb-2 font-serif">Proven QA Testing</h4>
+                <p className="text-sm text-slate-600">Manual and automated regression suites to guarantee bug-free deployments.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Stats Section (4 Cards in a row) */}
+      <section className="py-16 bg-[#fafafa] border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, i) => (
+              <div 
+                key={i} 
+                className="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.12)] hover:border-amber-200 transition-all text-left"
+              >
+                <div className="text-4xl lg:text-5xl font-bold text-[#d97706] font-serif mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-slate-600 text-sm font-medium">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Our Core Services Section */}
+      <section id="services" className="py-24 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <div>
+              <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-2 block">
+                WHAT WE BUILD
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900">
+                Our Core <span className="italic text-[#d97706] font-normal font-serif">Services</span>
+              </h2>
             </div>
             <Link 
               href="/services" 
-              className="inline-flex justify-center items-center border border-gray-700 text-gray-300 font-medium py-2.5 px-6 rounded-lg hover:border-white hover:text-white transition-colors text-sm"
+              className="text-[#d97706] hover:text-[#b45309] font-semibold text-sm inline-flex items-center gap-1.5 transition-colors group"
             >
-              View All Services &rarr;
+              View All Services 
+              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.map((service, index) => (
-              <div key={index} className="bg-[#0b1129] border border-[#1e2954] rounded-2xl overflow-hidden group hover:border-cyan-500/50 transition-colors flex flex-col h-full">
-                {/* Image Top Half */}
-                <div className="h-40 w-full relative bg-[#111936] overflow-hidden">
-                   <div className="absolute inset-0 bg-gradient-to-t from-[#0b1129] via-[#0b1129]/40 to-transparent z-10"></div>
-                   <div 
-                     className="absolute inset-0 opacity-60 bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                     style={{ backgroundImage: `url('${service.image}')` }}
-                   ></div>
-                   
-                   {/* Icon Badge overlapping image and content */}
-                   <div className="absolute bottom-4 left-6 z-20 w-10 h-10 rounded-lg bg-[#0b1129] border border-cyan-500/30 flex items-center justify-center shadow-lg">
-                     {service.icon}
-                   </div>
-                </div>
-                
-                {/* Content Bottom Half */}
-                <div className="p-6 pt-4 flex-grow flex flex-col">
-                  <h4 className="text-xl font-bold mb-3">{service.title}</h4>
-                  <p className="text-gray-400 text-sm leading-relaxed">
+          {/* Services Grid (8 items) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {coreServices.map((service, index) => (
+              <div 
+                key={index} 
+                className="group bg-[#fafafa] rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl hover:border-amber-200 transition-all flex flex-col justify-between"
+              >
+                <div className="p-6">
+                  {/* Icon & Title */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0">
+                      {service.badgeIcon}
+                    </div>
+                    <h3 className="text-lg font-bold text-slate-900 leading-snug">
+                      {service.title}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-slate-600 text-xs leading-relaxed mb-6">
                     {service.description}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* 4. Industries Section */}
-      <section className="py-24 bg-[#060814] text-white">
-        <div className="container mx-auto px-6 max-w-7xl text-center">
-          <h2 className="text-[#9d4edd] text-sm font-bold tracking-widest uppercase mb-4">INDUSTRIES WE SERVE</h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-serif mb-16">Built for Your Sector</h3>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { name: "Healthcare", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg> },
-              { name: "Fintech", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> },
-              { name: "EdTech", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg> },
-              { name: "Marketplace", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg> },
-              { name: "Transport", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg> },
-              { name: "Gaming", icon: <svg className="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> }
-            ].map((industry, i) => (
-              <div key={i} className="bg-[#0b1129] border border-[#1e2954] rounded-2xl p-8 flex flex-col items-center justify-center gap-4 hover:border-cyan-500/50 transition-colors group">
-                <div className="w-12 h-12 rounded-lg bg-[#060814] flex items-center justify-center border border-[#1e2954] group-hover:bg-cyan-500/10 transition-colors">
-                  {industry.icon}
+                {/* Card Image Banner */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100 border-t border-slate-100">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <span className="text-sm font-medium text-gray-300 group-hover:text-white">{industry.name}</span>
               </div>
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* 5. How We Work Section */}
-      <section className="py-24 bg-[#030712] text-white">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="flex flex-col lg:flex-row gap-16 items-start">
-            
-            {/* Left Content (Steps) */}
-            <div className="w-full lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold font-serif mb-6">
-                A Process Built <span className="font-script text-[#9d4edd] font-normal">for Clarity</span>
-              </h2>
-              <p className="text-gray-400 text-lg mb-12 max-w-lg leading-relaxed">
-                We've refined our delivery model across 200+ projects to eliminate surprises and maximize velocity from day one.
-              </p>
+      {/* 6. Industries We Serve Section */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl text-center">
+          
+          <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+            INDUSTRIES WE SERVE
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-16">
+            Built for Your Sector
+          </h2>
 
-              <div className="space-y-10 relative">
-                {/* Vertical Line */}
-                <div className="absolute left-6 top-10 bottom-10 w-px bg-[#1e2954]"></div>
-                
-                {[
-                  { num: "01", title: "Analysis", desc: "Deep-dive discovery to map requirements, risks, and technical constraints." },
-                  { num: "02", title: "Design", desc: "Architecture blueprints, UX prototypes, and technology stack selection." },
-                  { num: "03", title: "Development", desc: "Agile sprints with continuous integration, code reviews, and demos." },
-                  { num: "04", title: "Support", desc: "Post-launch monitoring, optimization, and long-term maintenance." }
-                ].map((step, i) => (
-                  <div key={i} className="flex gap-6 relative z-10">
-                    <div className="w-12 h-12 rounded-lg bg-[#0b1129] border border-[#1e2954] flex items-center justify-center text-cyan-400 font-bold shrink-0">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
+            {industries.map((industry, i) => (
+              <Link
+                key={i}
+                href="/portfolio"
+                className="bg-white border border-slate-100 rounded-2xl p-8 flex flex-col items-center justify-center gap-5 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-amber-200 transition-all group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-amber-50/80 flex items-center justify-center border border-amber-100 group-hover:bg-[#d97706] group-hover:text-white transition-all">
+                  <span className="group-hover:filter group-hover:brightness-0 group-hover:invert transition-all">
+                    {industry.icon}
+                  </span>
+                </div>
+                <span className="text-sm font-semibold text-slate-800 group-hover:text-[#d97706] transition-colors">
+                  {industry.name}
+                </span>
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 7. Our Philosophy Section (From Old Website) */}
+      <section className="py-24 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+              OUR GUIDING PRINCIPLES
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-4">
+              Our <span className="italic text-[#d97706] font-normal font-serif">Philosophy</span>
+            </h2>
+            <p className="text-slate-600 text-base">
+              The foundational values that inspire our engineering, culture, and client relationships every day.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {philosophies.map((phil, idx) => (
+              <div 
+                key={idx}
+                className="p-8 rounded-3xl bg-[#fafafa] border border-slate-200/80 hover:border-amber-200 hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-16 h-16 rounded-2xl bg-amber-50 border border-amber-200/60 flex items-center justify-center mb-6 shadow-sm">
+                    {phil.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold font-serif text-slate-900 mb-3">
+                    {phil.title}
+                  </h3>
+                  <p className="text-slate-600 leading-relaxed text-sm">
+                    {phil.desc}
+                  </p>
+                </div>
+                <div className="mt-6 pt-4 border-t border-slate-200/60 flex items-center justify-between text-xs text-[#d97706] font-semibold">
+                  <span>Pillar 0{idx + 1}</span>
+                  <span>GDSoftwares Core</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 8. Let Them Speak for us! (Testimonials from Old Website) */}
+      <section className="py-24 bg-[#fafafa] border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+              CLIENT TESTIMONIALS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-4">
+              Let Them Speak <span className="italic text-[#d97706] font-normal font-serif">For Us!</span>
+            </h2>
+            <p className="text-slate-600 text-base">
+              Real feedback from international partners and companies who trust GDSoftwares with their mission-critical software.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {testimonials.map((t, idx) => (
+              <div 
+                key={idx}
+                className="bg-white p-8 md:p-10 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all flex flex-col justify-between relative"
+              >
+                <div>
+                  {/* Star Rating */}
+                  <div className="flex items-center gap-1 mb-6 text-amber-500">
+                    {[...Array(t.stars)].map((_, s) => (
+                      <svg key={s} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+
+                  {/* Quote */}
+                  <p className="text-slate-700 text-base md:text-lg leading-relaxed italic mb-8">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                </div>
+
+                {/* Author Info */}
+                <div className="flex items-center gap-4 pt-6 border-t border-slate-100">
+                  <div className="w-12 h-12 rounded-full bg-amber-100 text-[#d97706] font-serif font-bold text-lg flex items-center justify-center shrink-0 border border-amber-200">
+                    {t.initial}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900 text-base">{t.name}</h4>
+                    <span className="text-xs text-slate-500">{t.role}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* 9. Development Process Section */}
+      <section className="py-24 bg-white border-b border-slate-100">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            {/* Left: 4 Workflow Steps */}
+            <div>
+              <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+                EXPERIENCED DELIVERY
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-12">
+                Our Development <span className="italic text-[#d97706] font-normal font-serif">Process</span>
+              </h2>
+
+              <div className="space-y-6">
+                {workflowSteps.map((step, idx) => (
+                  <div 
+                    key={idx}
+                    className="flex items-start gap-6 pb-6 border-b border-slate-200/70 last:border-0"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-amber-50 text-[#d97706] font-bold border border-amber-200/60 flex items-center justify-center font-serif text-lg shrink-0 shadow-sm">
                       {step.num}
                     </div>
-                    <div className="pt-2.5">
-                      <h4 className="text-xl font-bold mb-2">{step.title}</h4>
-                      <p className="text-gray-400 text-sm">{step.desc}</p>
+                    <div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-1">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {step.desc}
+                      </p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="w-full lg:w-1/2 relative mt-12 lg:mt-0">
-              <div className="w-full aspect-square md:aspect-[4/3] lg:aspect-auto lg:h-[600px] bg-[#111936] rounded-2xl overflow-hidden border border-[#1e2954] relative">
-                <div className="absolute inset-0 opacity-80 bg-[url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center"></div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/60 to-transparent"></div>
-              </div>
-              
-              <div className="absolute top-8 left-8 bg-[#0b1129] border border-[#1e2954] p-4 px-6 rounded-xl shadow-2xl flex flex-col items-center justify-center">
-                <span className="text-3xl font-bold text-[#5ed8e7] font-serif mb-1">8+</span>
-                <span className="text-xs text-gray-400">Years Experience</span>
+            {/* Right: Coding Screen & Developer Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-slate-200/80 bg-slate-900 relative">
+                <Image
+                  src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80"
+                  alt="Software Development in Progress"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
             </div>
 
@@ -330,37 +685,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. CTA Section */}
-      <section className="py-24 relative overflow-hidden text-center text-white">
-        <div className="absolute inset-0 bg-[#060814] z-0"></div>
-        <div className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80')] bg-cover bg-center z-0"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#060814] via-[#060814]/60 to-transparent z-0"></div>
-        
+      {/* 10. Pre-Footer Call to Action */}
+      <section className="py-24 relative overflow-hidden text-center text-slate-900 bg-[#fafafa]">
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold font-serif mb-6 leading-tight">
+          <span className="text-[#d97706] text-xs font-bold tracking-widest uppercase mb-3 block">
+            WE CAN TRANSFORM YOUR DIGITAL NEEDS
+          </span>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif mb-6 leading-tight text-slate-900">
             Ready to Build Something <br/>
-            <span className="font-script text-cyan-400 font-normal">Exceptional?</span>
+            <span className="italic text-[#d97706] font-normal font-serif">Exceptional?</span>
           </h2>
-          <p className="text-gray-300 text-lg mb-12 leading-relaxed">
-            Tell us about your project. We'll respond with a clear plan and honest timeline within 24 hours.
+          <p className="text-slate-600 text-base md:text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+            Tell us about your project requirements. We&apos;ll respond with a clear architectural roadmap and honest estimate within 24 hours.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={handleScheduleCall} 
+              className="inline-flex justify-center items-center bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-4 px-9 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.3)] hover:shadow-[0_6px_22px_rgba(217,119,6,0.4)] transition-all text-base active:scale-95 cursor-pointer"
+            >
+              Schedule a Call
+            </button>
             <Link 
               href="/quote" 
-              className="inline-flex justify-center items-center bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white font-semibold py-4 px-10 rounded-xl shadow-[0_0_20px_rgba(0,180,216,0.35)] hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] transition-all text-lg active:scale-95"
+              className="inline-flex justify-center items-center border border-slate-300 hover:border-slate-800 text-slate-800 bg-white hover:bg-slate-50 font-semibold py-4 px-9 rounded-xl transition-all text-base shadow-sm"
             >
               Get a Free Quote
             </Link>
-            <a 
-              href="tel:+19168060052" 
-              className="inline-flex justify-center items-center border border-gray-600 text-white font-semibold py-4 px-10 rounded-xl hover:border-white transition-colors text-lg"
-            >
-              +1 916-806-0052
-            </a>
           </div>
         </div>
       </section>
+
+      {/* Floating Schedule a Call Calendly Button (Matching Old Site Floating Trigger) */}
+      <button
+        onClick={handleScheduleCall}
+        className="fixed bottom-6 right-6 z-40 bg-[#d97706] hover:bg-[#b45309] text-white px-5 py-3.5 rounded-full shadow-[0_4px_22px_rgba(217,119,6,0.45)] hover:shadow-[0_6px_28px_rgba(217,119,6,0.55)] transition-all active:scale-95 flex items-center gap-2.5 font-semibold text-sm cursor-pointer border-2 border-white group"
+        title="Schedule a Call"
+      >
+        <svg className="w-5 h-5 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        </svg>
+        <span>Schedule a Call</span>
+      </button>
 
     </main>
   );

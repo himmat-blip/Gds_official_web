@@ -59,59 +59,54 @@ export default function CareerPage() {
   ];
 
   return (
-    <div className="bg-[#060b13] text-white min-h-screen pt-32 pb-24 selection:bg-cyan-500 selection:text-black">
-      {/* Ambient background glow */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-cyan-500/10 rounded-full blur-[140px]" />
-        <div className="absolute bottom-1/3 left-10 w-[450px] h-[450px] bg-indigo-500/10 rounded-full blur-[140px]" />
-      </div>
-
+    <div className="bg-[#fafafa] text-slate-900 min-h-screen pt-16 pb-24 selection:bg-amber-100 selection:text-amber-900">
       <div className="relative z-10 max-w-6xl mx-auto px-6">
+        
         {/* 1. Hero Section */}
         <div className="mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-semibold text-[#00d2ff] uppercase tracking-wider mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00d2ff] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-semibold text-[#d97706] uppercase tracking-wider mb-8 shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             CAREERS AT GDSOFTWARES
           </div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.15]">
-            <span className="font-serif text-white">Do the work you're </span>
-            <span className="font-serif italic text-[#00d2ff]">proud of.</span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 leading-[1.15] text-slate-900">
+            <span className="font-serif">Do the work you&apos;re </span>
+            <span className="font-serif italic text-[#d97706]">proud of.</span>
           </h1>
 
-          <p className="text-slate-300 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mb-12">
+          <p className="text-slate-600 text-base sm:text-lg md:text-xl leading-relaxed max-w-3xl mb-12">
             Join a curious, collaborative team building digital products across healthcare, finance, education, mobility, commerce, and gaming.
           </p>
 
           {/* Stats Bar */}
-          <div className="flex flex-wrap items-center gap-8 sm:gap-14 pt-8 border-t border-slate-800/80">
+          <div className="flex flex-wrap items-center gap-8 sm:gap-14 pt-8 border-t border-slate-200">
             <div>
-              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#00d2ff] mb-1">
+              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#d97706] mb-1">
                 6
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 OPEN ROLES
               </div>
             </div>
 
-            <div className="h-12 w-px bg-slate-800 hidden sm:block" />
+            <div className="h-12 w-px bg-slate-200 hidden sm:block" />
 
             <div>
-              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#00d2ff] mb-1">
+              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#d97706] mb-1">
                 Remote
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 FRIENDLY
               </div>
             </div>
 
-            <div className="h-12 w-px bg-slate-800 hidden sm:block" />
+            <div className="h-12 w-px bg-slate-200 hidden sm:block" />
 
             <div>
-              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#00d2ff] mb-1">
+              <div className="font-serif text-4xl sm:text-5xl font-bold text-[#d97706] mb-1">
                 8+
               </div>
-              <div className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+              <div className="text-xs font-semibold uppercase tracking-wider text-slate-500">
                 YEARS IN BUSINESS
               </div>
             </div>
@@ -121,13 +116,13 @@ export default function CareerPage() {
         {/* 2. Open Roles Section */}
         <div className="mb-20">
           <div className="mb-10">
-            <div className="text-xs font-bold uppercase tracking-widest text-[#00d2ff] mb-3">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#d97706] mb-3">
               OPEN ROLES
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-white mb-3">
+            <h2 className="text-3xl sm:text-4xl font-bold font-serif text-slate-900 mb-3">
               Find your next challenge.
             </h2>
-            <p className="text-slate-400 text-base max-w-2xl">
+            <p className="text-slate-600 text-base max-w-2xl">
               Bring your craft, perspective, and ambition. We offer meaningful work, room to grow, and teammates who care about doing things well.
             </p>
           </div>
@@ -137,19 +132,19 @@ export default function CareerPage() {
             {roles.map((role) => (
               <div
                 key={role.id}
-                className="group bg-[#0c1322] border border-slate-800/90 rounded-2xl p-6 sm:p-8 hover:border-cyan-500/40 hover:shadow-[0_0_30px_rgba(0,210,255,0.12)] transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6"
+                className="group bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 hover:border-amber-300 hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6 shadow-sm hover:-translate-y-0.5"
               >
                 <div className="flex-1">
-                  <div className="text-xs font-semibold text-[#00d2ff] uppercase tracking-wider mb-2">
+                  <div className="text-xs font-semibold text-[#d97706] uppercase tracking-wider mb-2">
                     {role.department}
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 group-hover:text-[#00d2ff] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 group-hover:text-[#d97706] transition-colors">
                     {role.title}
                   </h3>
-                  <div className="flex flex-wrap items-center gap-3 text-slate-400 text-sm mb-4">
+                  <div className="flex flex-wrap items-center gap-3 text-slate-500 text-sm mb-4">
                     <span>{role.experience}</span>
-                    <span className="text-slate-600">·</span>
-                    <span className="text-slate-400">{role.type}</span>
+                    <span className="text-slate-300">·</span>
+                    <span className="text-slate-500">{role.type}</span>
                   </div>
 
                   {/* Skill tags */}
@@ -157,7 +152,7 @@ export default function CareerPage() {
                     {role.tags.map((tag, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 rounded-md text-xs font-medium bg-[#070b14] border border-slate-800 text-slate-300"
+                        className="px-2.5 py-1 rounded-md text-xs font-medium bg-amber-50/70 border border-amber-200/60 text-amber-900"
                       >
                         {tag}
                       </span>
@@ -169,7 +164,7 @@ export default function CareerPage() {
                 <div className="flex-shrink-0">
                   <Link
                     href={`/contact-us?role=${encodeURIComponent(role.title)}`}
-                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#00b4d8] to-[#0096c7] hover:shadow-[0_0_20px_rgba(0,180,216,0.55)] shadow-[0_0_15px_rgba(0,180,216,0.3)] transition-all active:scale-95"
+                    className="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 rounded-xl text-sm font-semibold text-white bg-[#d97706] hover:bg-[#b45309] shadow-md transition-all active:scale-95"
                   >
                     Apply now
                   </Link>
@@ -180,22 +175,20 @@ export default function CareerPage() {
         </div>
 
         {/* 3. "Don't see your role?" Card */}
-        <div className="rounded-3xl bg-gradient-to-b from-[#0c1424] to-[#070b14] border border-slate-800/90 py-16 px-6 sm:px-12 text-center overflow-hidden shadow-2xl relative">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />
-
+        <div className="rounded-3xl bg-white border border-amber-200/70 py-16 px-6 sm:px-12 text-center overflow-hidden shadow-lg relative">
           <div className="relative z-10 max-w-2xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-white mb-4">
-              Don't see your role?
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-slate-900 mb-4">
+              Don&apos;t see your role?
             </h2>
-            <p className="text-slate-400 text-base sm:text-lg mb-8 leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
               We are always interested in meeting thoughtful designers, developers, strategists, and technologists.
             </p>
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00b4d8] to-[#0096c7] text-white px-8 py-3.5 rounded-xl font-semibold hover:shadow-[0_0_25px_rgba(0,180,216,0.55)] shadow-[0_0_20px_rgba(0,180,216,0.35)] transition-all text-base active:scale-95 group"
+              className="inline-flex items-center gap-2 bg-[#d97706] hover:bg-[#b45309] text-white px-8 py-3.5 rounded-xl font-semibold shadow-md hover:shadow-xl transition-all text-base active:scale-95 group"
             >
               <span>Start a conversation</span>
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
+              <span className="group-hover:translate-x-1 transition-transform">&rarr;</span>
             </Link>
           </div>
         </div>
