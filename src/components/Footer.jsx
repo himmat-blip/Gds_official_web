@@ -71,8 +71,6 @@ export default function Footer() {
         <div className="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-slate-500 text-xs gap-4">
           <p>&copy; {new Date().getFullYear()} GD Softwares. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-[#d97706] transition-colors">Privacy</Link>
-            <Link href="/terms" className="hover:text-[#d97706] transition-colors">Terms</Link>
             <a href="https://www.linkedin.com/company/gdsoftwares/" target="_blank" rel="noopener noreferrer" className="hover:text-[#d97706] transition-colors">LinkedIn</a>
             <a href="https://www.facebook.com/GdSoftwares/" target="_blank" rel="noopener noreferrer" className="hover:text-[#d97706] transition-colors">Facebook</a>
           </div>
