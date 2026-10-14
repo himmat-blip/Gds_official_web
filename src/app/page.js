@@ -264,83 +264,78 @@ export default function Home() {
   return (
     <main className="min-h-screen font-sans bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900 relative">
       
-      {/* 1. Hero Section matching user mockup */}
-      <section className="relative pt-6 pb-12 md:pt-8 md:pb-16 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
+      {/* 1. Hero Section with IT office background on right-hand side */}
+      <section className="relative min-h-[580px] lg:min-h-[620px] flex flex-col justify-center bg-white overflow-hidden border-b border-slate-100 pt-6 pb-10 md:pt-10 md:pb-12">
         
-        {/* Subtle Warm Amber ambient background */}
-        <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/35 blur-[130px] rounded-full pointer-events-none" />
+        {/* Right-hand side background IT Office collaboration image */}
+        <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[62%] xl:w-[60%] z-0 pointer-events-none overflow-hidden">
+          <Image
+            src="/images/hero-it-office-bg.jpg"
+            alt="Modern IT software engineers collaborating in office"
+            fill
+            sizes="(max-width: 1024px) 100vw, 62vw"
+            className="object-cover object-right"
+            priority
+          />
+          {/* Seamless gradient overlays so text on left is crystal clear and image blends into white background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-transparent lg:via-white/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-transparent opacity-60" />
+        </div>
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          {/* Left Column Content */}
+          <div className="max-w-2xl lg:max-w-xl py-4 lg:py-8">
             
-            {/* Left Column Content */}
-            <div className="lg:col-span-6 z-10">
-              
-              {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.12]">
-                <span className="font-serif block">Level Up Your</span>
-                <span className="font-serif block">Business with</span>
-                <span className="font-serif block text-slate-900 relative inline-block">
-                  Software
-                  <span className="block w-20 h-1.5 bg-[#d97706] rounded-full mt-2" />
-                </span>
-              </h1>
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.12]">
+              <span className="font-serif block">Level Up Your</span>
+              <span className="font-serif block">Business with</span>
+              <span className="font-serif block text-slate-900 relative inline-block">
+                Software
+                <span className="block w-20 h-1.5 bg-[#d97706] rounded-full mt-2" />
+              </span>
+            </h1>
 
-              {/* Subtitle */}
-              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
-                Custom software, mobile apps, and blockchain solutions engineered for growth. 8+ years delivering excellence across healthcare, fintech, and beyond.
-              </p>
+            {/* Subtitle */}
+            <p className="text-slate-700 text-base md:text-lg mb-8 leading-relaxed max-w-xl font-normal">
+              Custom software, mobile apps, and blockchain solutions engineered for growth. 8+ years delivering excellence across healthcare, fintech, and beyond.
+            </p>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4">
-                <button 
-                  onClick={handleScheduleCall}
-                  className="inline-flex items-center gap-2 bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3.5 px-7 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.28)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.38)] transition-all active:scale-95 text-base cursor-pointer"
-                >
-                  <span>Start a Project</span>
-                  <span>&rarr;</span>
-                </button>
-                <a 
-                  href="#services" 
-                  className="inline-flex items-center gap-2 border border-[#d97706] text-[#d97706] hover:bg-amber-50/50 bg-white font-semibold py-3.5 px-7 rounded-xl transition-all text-base shadow-xs"
-                >
-                  <span>View Services</span>
-                  <span>&darr;</span>
-                </a>
-              </div>
-
-            </div>
-
-            {/* Right Column Image: Team collaborating in sunlit tech office */}
-            <div className="lg:col-span-6 relative">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900">
-                <Image
-                  src="/images/team-office.jpg"
-                  alt="Software development team collaborating in modern office"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-4">
+              <button 
+                onClick={handleScheduleCall}
+                className="inline-flex items-center gap-2 bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3.5 px-7 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.28)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.38)] transition-all active:scale-95 text-base cursor-pointer"
+              >
+                <span>Start a Project</span>
+                <span>&rarr;</span>
+              </button>
+              <a 
+                href="#services" 
+                className="inline-flex items-center gap-2 border border-[#d97706] text-[#d97706] hover:bg-amber-50/70 bg-white/90 backdrop-blur-xs font-semibold py-3.5 px-7 rounded-xl transition-all text-base shadow-xs"
+              >
+                <span>View Services</span>
+                <span>&darr;</span>
+              </a>
             </div>
 
           </div>
 
           {/* Bottom Floating Stats Bar matching user screenshot */}
-          <div className="mt-14 pt-10 border-t border-slate-200/80">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+          <div className="mt-8 lg:mt-12 pt-8 border-t border-slate-200/80">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
               {stats.map((s, idx) => (
-                <div key={idx} className="flex items-center gap-4 p-4 rounded-2xl bg-white/70 backdrop-blur-xs border border-slate-100 hover:border-amber-200 hover:shadow-sm transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0">
+                <div key={idx} className="flex items-center gap-3.5 p-3.5 lg:p-4 rounded-2xl bg-white/85 backdrop-blur-md border border-slate-200/80 hover:border-amber-300 hover:shadow-md transition-all">
+                  <div className="w-11 h-11 lg:w-12 lg:h-12 rounded-xl bg-amber-50 border border-amber-200/70 flex items-center justify-center shrink-0">
                     {s.icon}
                   </div>
                   <div>
                     <div className="text-2xl lg:text-3xl font-bold font-serif text-slate-900 leading-tight">
                       {s.number}
                     </div>
-                    <div className="text-[11px] font-bold tracking-wider text-slate-500 uppercase">
+                    <div className="text-[10px] lg:text-[11px] font-bold tracking-wider text-slate-600 uppercase">
                       {s.label}
                     </div>
                   </div>
