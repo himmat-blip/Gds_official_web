@@ -24,7 +24,6 @@ export default function Header() {
   };
 
   const navLinks = [
-    { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
     { name: "Portfolio", href: "/portfolio" },
     { name: "Hire Resources", href: "/hire-resources" },

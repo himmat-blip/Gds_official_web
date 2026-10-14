@@ -14,10 +14,43 @@ export default function Home() {
   };
 
   const stats = [
-    { number: "8+", label: "Years in Industry" },
-    { number: "388+", label: "Projects Delivered" },
-    { number: "155+", label: "Happy Clients" },
-    { number: "20+", label: "Team Members" },
+    {
+      number: "8+",
+      label: "YEARS IN INDUSTRY",
+      icon: (
+        <svg className="w-6 h-6 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v5m-4 0h8M6 4h12v4a6 6 0 01-12 0V4z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 6H3a2 2 0 00-2 2v1a4 4 0 004 4h1m12-7h3a2 2 0 012 2v1a4 4 0 01-4 4h-1" />
+        </svg>
+      )
+    },
+    {
+      number: "200+",
+      label: "PROJECTS DELIVERED",
+      icon: (
+        <svg className="w-6 h-6 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+      )
+    },
+    {
+      number: "50+",
+      label: "GLOBAL CLIENTS",
+      icon: (
+        <svg className="w-6 h-6 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    },
+    {
+      number: "99%",
+      label: "CLIENT RETENTION",
+      icon: (
+        <svg className="w-6 h-6 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      )
+    }
   ];
 
   const coreServices = [
@@ -231,51 +264,97 @@ export default function Home() {
   return (
     <main className="min-h-screen font-sans bg-white text-slate-900 selection:bg-amber-100 selection:text-amber-900 relative">
       
-      {/* 1. Hero Section */}
-      <section className="relative pt-20 pb-28 md:pt-28 md:pb-36 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
+      {/* 1. Hero Section matching user mockup */}
+      <section className="relative pt-12 pb-16 md:pt-16 md:pb-20 bg-gradient-to-b from-[#faf8f5] via-white to-white overflow-hidden border-b border-slate-100">
         
         {/* Subtle Warm Amber ambient background */}
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/40 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-amber-100/35 blur-[130px] rounded-full pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
-          <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+          
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-8 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-[#d97706]" />
-              8+ YEARS OF PROVEN EXCELLENCE IN USA
+            {/* Left Column Content */}
+            <div className="lg:col-span-6 z-10">
+              
+              {/* USA-Based Badge */}
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-amber-200 bg-amber-50/80 text-[11px] font-bold uppercase tracking-wider text-[#d97706] mb-6 shadow-xs">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#d97706]" />
+                USA-BASED SOFTWARE COMPANY
+              </div>
+
+              {/* Headline */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.12]">
+                <span className="font-serif block">Level Up Your</span>
+                <span className="font-serif block">Business with</span>
+                <span className="font-serif block text-slate-900 relative inline-block">
+                  Software
+                  <span className="block w-20 h-1.5 bg-[#d97706] rounded-full mt-2" />
+                </span>
+              </h1>
+
+              {/* Subtitle */}
+              <p className="text-slate-600 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
+                Custom software, mobile apps, and blockchain solutions engineered for growth. 8+ years delivering excellence across healthcare, fintech, and beyond.
+              </p>
+
+              {/* Action Buttons */}
+              <div className="flex flex-wrap items-center gap-4">
+                <button 
+                  onClick={handleScheduleCall}
+                  className="inline-flex items-center gap-2 bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3.5 px-7 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.28)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.38)] transition-all active:scale-95 text-base cursor-pointer"
+                >
+                  <span>Start a Project</span>
+                  <span>&rarr;</span>
+                </button>
+                <a 
+                  href="#services" 
+                  className="inline-flex items-center gap-2 border border-[#d97706] text-[#d97706] hover:bg-amber-50/50 bg-white font-semibold py-3.5 px-7 rounded-xl transition-all text-base shadow-xs"
+                >
+                  <span>View Services</span>
+                  <span>&darr;</span>
+                </a>
+              </div>
+
             </div>
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 mb-8 leading-[1.12]">
-              <span className="font-serif block sm:inline">Level Up Your </span>
-              <span className="font-serif italic text-[#d97706] font-normal">Business</span>
-              <br className="hidden sm:inline" />
-              <span className="font-serif"> with Software Development</span>
-            </h1>
-
-            {/* Subtitle */}
-            <p className="text-slate-600 text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl font-light leading-relaxed">
-              We engineer custom software applications, scalable mobile apps, robust web platforms, and automated QA systems to solve complex business challenges.
-            </p>
-            
-            {/* CTA Buttons */}
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <button 
-                onClick={handleScheduleCall}
-                className="inline-flex justify-center items-center bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3.5 px-8 rounded-xl shadow-[0_4px_16px_rgba(217,119,6,0.28)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.38)] transition-all active:scale-95 text-base cursor-pointer"
-              >
-                Schedule a Call
-              </button>
-              <Link 
-                href="/contact-us" 
-                className="inline-flex justify-center items-center border border-slate-300 hover:border-slate-800 text-slate-800 bg-white/90 hover:bg-white font-semibold py-3.5 px-8 rounded-xl transition-all text-base shadow-sm"
-              >
-                Get a Solution
-              </Link>
+            {/* Right Column Image: Team collaborating in sunlit tech office */}
+            <div className="lg:col-span-6 relative">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900">
+                <Image
+                  src="/images/team-office.jpg"
+                  alt="Software development team collaborating in modern office"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </div>
 
           </div>
+
+          {/* Bottom Floating Stats Bar matching user screenshot */}
+          <div className="mt-14 pt-10 border-t border-slate-200/80">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+              {stats.map((s, idx) => (
+                <div key={idx} className="flex items-center gap-4 p-4 rounded-2xl bg-white/70 backdrop-blur-xs border border-slate-100 hover:border-amber-200 hover:shadow-sm transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-amber-50 border border-amber-200/60 flex items-center justify-center shrink-0">
+                    {s.icon}
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold font-serif text-slate-900 leading-tight">
+                      {s.number}
+                    </div>
+                    <div className="text-[11px] font-bold tracking-wider text-slate-500 uppercase">
+                      {s.label}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -415,26 +494,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Stats Section (4 Cards in a row) */}
-      <section className="py-16 bg-[#fafafa] border-b border-slate-100">
-        <div className="container mx-auto px-6 max-w-7xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <div 
-                key={i} 
-                className="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_6px_20px_rgba(217,119,6,0.12)] hover:border-amber-200 transition-all text-left"
-              >
-                <div className="text-4xl lg:text-5xl font-bold text-[#d97706] font-serif mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-slate-600 text-sm font-medium">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* 5. Our Core Services Section */}
       <section id="services" className="py-24 bg-white border-b border-slate-100">
