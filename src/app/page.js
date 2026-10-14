@@ -533,6 +533,97 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 6.5. GDS Labs Innovation Spotlight Section */}
+      <section className="py-24 bg-gradient-to-b from-[#faf8f5] via-white to-white border-b border-slate-100 relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-100/30 blur-[130px] rounded-full pointer-events-none" />
+        
+        <div className="container mx-auto px-6 max-w-7xl relative z-10">
+          
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
+            <div>
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-4 shadow-xs">
+                <span className="w-2 h-2 rounded-full bg-[#d97706] animate-pulse" />
+                R&amp;D &bull; GDS LABS
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold font-serif text-slate-900 leading-tight">
+                AI Voice Agents &amp; <span className="italic text-[#d97706] font-normal font-serif">Enterprise Automation</span>
+              </h2>
+            </div>
+            <Link 
+              href="/labs" 
+              className="inline-flex items-center gap-2 bg-[#d97706] hover:bg-[#b45309] text-white font-semibold py-3 px-6 rounded-xl shadow-md transition-all active:scale-95 text-sm"
+            >
+              Explore GDS Labs &rarr;
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Lab Card 1: Voice Agents */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#d97706] border border-amber-200/60 flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z" />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#d97706] block mb-2">Real-Time Telephony</span>
+                <h3 className="text-2xl font-bold font-serif text-slate-900 mb-3">AI Voice Agents</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  Ultra-low latency (&lt;500ms) human-like voice agents handling inbound customer support, lead qualification, and live CRM calendar bookings.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>Twilio &bull; LiveKit &bull; Nova-2</span>
+                <Link href="/labs" className="text-[#d97706] font-semibold hover:underline">View Lab &rarr;</Link>
+              </div>
+            </div>
+
+            {/* Lab Card 2: n8n Automation */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#d97706] border border-amber-200/60 flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#d97706] block mb-2">Self-Hosted Pipelines</span>
+                <h3 className="text-2xl font-bold font-serif text-slate-900 mb-3">n8n Enterprise Automation</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  Autonomous event-driven workflows connecting complex SaaS ecosystems, databases, and AI models with zero SaaS task subscription fees.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>Docker &bull; Redis &bull; Stripe Hub</span>
+                <Link href="/labs" className="text-[#d97706] font-semibold hover:underline">View Lab &rarr;</Link>
+              </div>
+            </div>
+
+            {/* Lab Card 3: Hybrid RAG & Copilots */}
+            <div className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:border-amber-200 transition-all flex flex-col justify-between">
+              <div>
+                <div className="w-12 h-12 rounded-2xl bg-amber-50 text-[#d97706] border border-amber-200/60 flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                  </svg>
+                </div>
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#d97706] block mb-2">Hybrid Semantic Search</span>
+                <h3 className="text-2xl font-bold font-serif text-slate-900 mb-3">Enterprise AI Chatbots</h3>
+                <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  Context-aware internal copilots powered by hybrid vector search that answer questions with verifiable citations from company docs.
+                </p>
+              </div>
+              <div className="pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span>LangChain &bull; Qdrant &bull; Claude</span>
+                <Link href="/labs" className="text-[#d97706] font-semibold hover:underline">View Lab &rarr;</Link>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
       {/* 7. Our Philosophy Section (From Old Website) */}
       <section className="py-24 bg-white border-b border-slate-100">
         <div className="container mx-auto px-6 max-w-7xl">
