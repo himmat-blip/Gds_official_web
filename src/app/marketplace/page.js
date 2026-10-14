@@ -183,7 +183,7 @@ export default function MarketplacePortfolio() {
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&w=1200&q=80"
                   alt="Online Marketplace and E-Commerce Ecosystem"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"

@@ -103,7 +103,7 @@ export default function IosDevelopmentPage() {
             <div className="lg:col-span-5 relative">
               <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 bg-slate-900 relative">
                 <Image
-                  src="https://images.unsplash.com/photo-1510519138115-4c278ef86b97?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80"
                   alt="iOS App Development Company iPhone iPad Apple Watch"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"

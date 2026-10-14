@@ -52,7 +52,7 @@ export default function PortfolioPage() {
       id: "marketplace",
       title: "GDS Marketplace",
       category: "GDS Marketplace",
-      image: "https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=800&auto=format&fit=crop&q=80",
+      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=800&auto=format&fit=crop&q=80",
       description:
         "Custom high-performance multi-vendor marketplaces like Amazon, Uber, and Airbnb across B2B, B2C, P2P, and B2G business models with automated payouts and inventory sync.",
       tags: ["B2B & B2C Models", "Vendor Portals", "Escrow Payments", "Dispute Resolution"],
